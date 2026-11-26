@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李佳-产品经理作品集</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap">
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f7f8fa; --card:#ffffff; --card2:#f5f7f9;
+  --line:#e6eaee; --text:#1f2730; --muted:#5c6b78; --dim:#97a4af;
+  --accent:#2f9e8f; --accent2:#2b7fa8; --warn:#e0a458; --tag:#f2f5f7;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+/* ===== 顶部导航 ===== */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;letter-spacing:.05em;font-size:17px}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:26px;font-size:14px}
+.nav-links a{color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+
+/* ===== Hero ===== */
+header.hero{padding:96px 0 70px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(47,158,143,.1),transparent 70%)}
+.eyebrow{color:var(--accent);font-size:14px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:44px;font-weight:900;line-height:1.25;letter-spacing:.01em}
+h1 .hl{color:var(--accent2)}
+.hero-sub{margin-top:20px;max-width:640px;color:var(--muted);font-size:17px}
+.hero-id{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;font-size:15px;color:var(--muted)}
+.hero-id b{color:var(--text);font-weight:500}
+.hero-id .dot{color:var(--line)}
+.hero-contact{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;font-size:14px;color:var(--muted)}
+.hero-contact b{color:var(--text);font-weight:500}
+.hero-contact .dot{color:var(--line)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.chip{background:var(--tag);border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:13.5px;color:var(--muted)}
+.chip b{color:var(--text);font-weight:500}
+
+/* ===== 通用区块 ===== */
+section{padding:64px 0}
+.sec-title{font-size:28px;font-weight:700;margin-bottom:8px}
+.sec-desc{color:var(--muted);max-width:640px;margin-bottom:36px}
+
+/* ===== 能力标签墙 ===== */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.skill-card h3{font-size:16px;margin-bottom:14px;color:var(--accent2)}
+.skill-card ul{list-style:none}
+.skill-card li{font-size:14px;color:var(--muted);padding:5px 0;padding-left:18px;position:relative}
+.skill-card li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* ===== 项目卡片 ===== */
+.project{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:34px;overflow:hidden;box-shadow:0 1px 3px rgba(31,39,48,.05)}
+.project-head{padding:32px 34px 24px;border-bottom:1px solid var(--line)}
+.project-no{font-size:13px;color:var(--dim);letter-spacing:.15em}
+.project-head h2{font-size:24px;font-weight:700;margin:6px 0 10px}
+.project-tags{display:flex;flex-wrap:wrap;gap:8px}
+.ptag{background:var(--tag);border:1px solid var(--line);border-radius:6px;padding:4px 11px;font-size:12.5px;color:var(--muted)}
+.project-body{padding:30px 34px}
+.pb-row{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.pb-row:last-child{border-bottom:none}
+.pb-label{color:var(--dim);font-size:14px;font-weight:500}
+.pb-content{font-size:15px}
+.pb-content p{margin-bottom:8px}
+.pb-content p:last-child{margin-bottom:0}
+.pb-content ul{padding-left:20px}
+.pb-content li{margin:5px 0}
+
+/* 角色与职责小表 */
+.role-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px}
+.role-item{background:var(--card2);border-radius:10px;padding:14px 16px}
+.role-item h4{font-size:13.5px;color:var(--accent);margin-bottom:6px}
+.role-item p{font-size:13.5px;color:var(--muted)}
+
+/* 决策取舍块 */
+.tradeoff{background:linear-gradient(135deg,rgba(47,158,143,.06),rgba(43,127,168,.05));border:1px solid rgba(47,158,143,.2);border-radius:12px;padding:18px 20px;margin-top:14px}
+.tradeoff h4{font-size:14px;color:var(--accent);margin-bottom:8px}
+.tradeoff p{font-size:14px;color:var(--muted)}
+
+/* 能力矩阵 */
+.matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:10px}
+.metric{background:var(--card2);border-radius:12px;padding:22px;text-align:center}
+.metric .num{font-size:24px;font-weight:700;color:var(--accent2);white-space:nowrap}
+.metric .cap{font-size:13px;color:var(--muted);margin-top:6px}
+.app-data{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.app-card{background:var(--card2);border-radius:12px;padding:20px}
+.app-card h4{font-size:14px;color:var(--text);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.app-row{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;font-size:13.5px}
+.app-row .k{color:var(--muted)}
+.app-row .v{font-weight:700;color:var(--accent2);white-space:nowrap}
+.data-note{margin-top:12px;font-size:12.5px;color:var(--dim)}
+
+/* ===== 原型图展示 ===== */
+.proto{margin-top:18px}
+.proto-main{border:1px solid var(--line);border-radius:14px;background:var(--bg2);overflow:hidden;aspect-ratio:16/9}
+.proto-main img{width:100%;height:100%;display:block;object-fit:cover}
+.proto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.proto-cell{border:1px solid var(--line);border-radius:12px;background:var(--bg2);overflow:hidden;aspect-ratio:4/3;position:relative}
+.proto-cell img{width:100%;height:100%;object-fit:cover;display:block}
+.proto-cap{font-size:12px;color:var(--dim);margin-top:10px}
+.proto-grid.tall{grid-template-columns:repeat(3,1fr)}
+.proto-grid.tall .proto-cell{aspect-ratio:4/3}
+
+/* ===== 工作方法 ===== */
+.method{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mstep{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.mstep .n{font-size:13px;color:var(--accent);font-weight:700;letter-spacing:.1em}
+.mstep h3{font-size:16px;margin:8px 0 8px}
+.mstep p{font-size:13.5px;color:var(--muted)}
+
+/* ===== 关于 / 备注 ===== */
+.note{background:var(--bg2);border:1px dashed var(--line);border-radius:var(--radius);padding:24px 28px;color:var(--muted);font-size:14px}
+.note h3{color:var(--text);font-size:16px;margin-bottom:10px}
+.note ul{padding-left:20px}
+.note li{margin:6px 0}
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}
+.about-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px}
+.about-card h3{font-size:17px;color:var(--text);margin-bottom:12px}
+.about-card p{font-size:14.5px;color:var(--muted);line-height:1.8;margin-bottom:10px}
+.about-card p:last-child{margin-bottom:0}
+.about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.about-tags .chip{font-size:13px}
+.about-side{background:var(--card2);border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px}
+.about-side h4{font-size:14px;color:var(--accent2);margin-bottom:12px}
+.about-side ul{list-style:none}
+.about-side li{font-size:13.5px;color:var(--muted);padding:6px 0;padding-left:16px;position:relative}
+.about-side li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.about-note{margin-top:18px;background:var(--bg2);border:1px dashed var(--line);border-radius:var(--radius);padding:18px 22px;font-size:13px;color:var(--dim)}
+.about-note b{color:var(--muted)}
+
+footer{padding:40px 0 56px;border-top:1px solid var(--line);color:var(--dim);font-size:13px;text-align:center}
+
+/* 响应式 */
+@media(max-width:860px){
+  .skills-grid,.role-grid{grid-template-columns:1fr 1fr}
+  .method,.matrix{grid-template-columns:1fr 1fr}
+  .about-grid,.app-data{grid-template-columns:1fr}
+  h1{font-size:32px}
+  .pb-row{grid-template-columns:1fr;gap:6px}
+  .project-head,.project-body{padding:24px 22px}
+  .nav-links{display:none}
+}
+@media(max-width:540px){
+  .skills-grid,.role-grid,.method,.matrix{grid-template-columns:1fr}
+  .proto-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="logo">李佳<span>.</span>PM 作品集</div>
+    <div class="nav-links">
+      <a href="#projects">项目案例</a>
+      <a href="#skills">能力概览</a>
+      <a href="#method">工作方法</a>
+      <a href="#about">关于我</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Product Manager Portfolio · 2026</div>
+    <h1>李佳<br><span class="hl">工具类产品经理 · 作品集</span></h1>
+    <div class="hero-id">
+      <span>求职岗位：<b>产品经理 / 产品助理</b></span>
+      <span class="dot">·</span>
+      <span>工作年限：<b>1.5 年</b></span>
+      <span class="dot">·</span>
+      <span>学历：<b>大专</b></span>
+      <span class="dot">·</span>
+      <span>所在地：<b>深圳</b></span>
+    </div>
+    <p class="hero-sub">
+      过往任职产研部门产品助理，围绕一线维修、施工与教学场景，负责从需求调研、原型设计、计算器规则梳理到后台配置与迭代跟进的完整链路；同时负责垂直领域短视频内容矩阵的选题、脚本与运营复盘，参与多款移动端工具 App、配套后台及内容增长的产品工作。
+    </p>
+    <div class="hero-meta">
+      <div class="chip">方向：<b>工具类 / 行业垂直 App / 后台系统 / 内容运营</b></div>
+      <div class="chip">领域：<b>电工 · 暖通空调 · 弱电智能化</b></div>
+      <div class="chip">产出：<b>Axure 原型 · PRD · 计算规则 · 选题脚本 · 数据复盘</b></div>
+      <div class="chip">协作：<b>研发 · 设计 · 测试 · 内容运营</b></div>
+    </div>
+    <div class="hero-contact">
+      <span>电话：<b>13427910767</b></span>
+      <span class="dot">·</span>
+      <span>微信：<b>tutuu1107</b></span>
+      <span class="dot">·</span>
+      <span>邮箱：<b>3263188618@qq.com</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 能力概览 ============ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-title">能力概览</div>
+    <p class="sec-desc">基于实际参与过的产品工作归纳，覆盖需求到上线迭代的主要环节。</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>需求与调研</h3>
+        <ul>
+          <li>面向一线师傅、教师、学员等角色拆解真实工作流</li>
+          <li>整理用户反馈与错题、查询、计算类高频痛点</li>
+          <li>区分主流程与边缘场景，定义首期范围与后置项</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>产品设计</h3>
+        <ul>
+          <li>使用 Axure 输出页面原型、交互说明与状态流转</li>
+          <li>设计移动端首页、工具画布、个人中心与管理后台</li>
+          <li>梳理表单规则、校验提示、权限与审核流程</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>规则与内容沉淀</h3>
+        <ul>
+          <li>将行业经验公式、选型对照表整理为可落地的计算规则</li>
+          <li>沉淀元件库、图册分类、题库与资料体系结构</li>
+          <li>校验输入项、输出口径、参考标准与异常提示</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>迭代与协作</h3>
+        <ul>
+          <li>维护需求清单与优先级，跟进原型评审与研发落地</li>
+          <li>配合测试验收核心场景、异常场景与后台配置</li>
+          <li>基于反馈提出版本迭代方案与优化项</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>后台与配置思维</h3>
+        <ul>
+          <li>设计用户、内容、标签、批次与权益兑换等后台模块</li>
+          <li>区分前端展示与后台可配置项，支持运营自助维护</li>
+          <li>关注数据统计入口与操作留痕</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>领域理解</h3>
+        <ul>
+          <li>熟悉电工基础、电机控制、照明与配电基础术语</li>
+          <li>理解暖通冷/热负荷、多联机选型、制冷剂与线径空开计算</li>
+          <li>了解弱电综合布线、监控、门禁、消防等子系统资料结构</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>内容与增长</h3>
+        <ul>
+          <li>搭建垂直领域内容选题矩阵，覆盖仪表、接线、安全、弱电等主题</li>
+          <li>按播放、完播、收藏、涨粉等指标复盘选题与标题策略</li>
+          <li>用内容反哺工具产品需求：从评论与高收藏内容提炼高频痛点</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 项目案例 ============ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-title">项目案例</div>
+    <p class="sec-desc">以下案例依据交接原型、计算表与迭代需求记录整理，覆盖需求、原型、规则与后台设计等主要产品工作。</p>
+
+    <!-- 项目 1 -->
+    <article class="project">
+      <div class="project-head">
+        <div class="project-no">PROJECT 01</div>
+        <h2>电工大师 · 电工工具与考证学习 App（迭代）</h2>
+        <div class="project-tags">
+          <span class="ptag">移动端 App</span><span class="ptag">计算器矩阵</span><span class="ptag">题库学习</span>
+          <span class="ptag">多语言</span><span class="ptag">迭代需求梳理</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="pb-row">
+          <div class="pb-label">项目背景</div>
+          <div class="pb-content">
+            <p>面向电工从业者与考证学员的综合工具 App，核心由「计算器 + 题库 + 资料图册」三部分构成。迭代阶段需要在既有产品上补齐计算器种类、优化题库体验、扩展新能源（光伏储能）计算能力，并支持简繁体语言切换。</p>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">我的角色</div>
+          <div class="pb-content">
+            <div class="role-grid">
+              <div class="role-item"><h4>需求梳理</h4><p>整理迭代需求清单，按计算器、题库、资料分类标注优先级与备注。</p></div>
+              <div class="role-item"><h4>原型与规则</h4><p>输出计算页面交互原型，梳理输入项、公式释义、参考标准与异常提示口径。</p></div>
+              <div class="role-item"><h4>题库体验设计</h4><p>设计学习模式、错题集自动清除规则、收藏与纠错求助等学习闭环。</p></div>
+              <div class="role-item"><h4>内容结构</h4><p>规划基础知识、电气元件、仪表使用、电路图册等资料分类体系。</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">核心产出</div>
+          <div class="pb-content">
+            <ul>
+              <li><b>电工计算器矩阵：</b>欧姆定律、焦耳定律、电动机功率、感抗/容抗、RLC 谐振、三相零线电流、电容串/无功、变压器电阻温度换算、热电偶 / PT100 温度换算、进制转换，以及储能电池容量、PCS 选型、组串配置、往返效率、光伏组串与逆变器选型等新能源计算器。</li>
+              <li><b>题库学习闭环：</b>顺序练习、模拟考试、收藏重点题、易错题汇总；错题集支持同一题连续答对 3 次自动移出，并保留手动删除与纠错、求助入口。</li>
+              <li><b>资料与标准查询：</b>引脚定义、电缆电抗表、设备编号标准、基础原理与分类电路图册。</li>
+              <li><b>多语言：</b>简体中文与繁體中文（港澳台）切换入口。</li>
+            </ul>
+            <div class="proto">
+              <div class="proto-main">
+                <img src="assets/master-member.png" alt="会员中心与邀请奖励原型">
+              </div>
+              <div class="proto-grid">
+                <div class="proto-cell"><img src="assets/master-vip.png" alt="开通会员与权益介绍原型"></div>
+                <div class="proto-cell"><img src="assets/master-practice.png" alt="接线试炼题库与难度分级原型"></div>
+                <div class="proto-cell"><img src="assets/master-wiring-lib.png" alt="开始接线与元器件分类库原型"></div>
+              </div>
+              <div class="proto-cap">图注：电工大师会员中心、开通会员、接线试炼题库与元器件库原型</div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">关键取舍</div>
+          <div class="pb-content">
+            <div class="tradeoff">
+              <h4>从「答题刷题」到「先看懂再练」</h4>
+              <p>新增学习模式：直接展示答案与解析，降低新手理解门槛；考证模拟与错题练习保留独立路径，服务两类不同目标的用户。错题自动清除阈值取「连续答对 3 次」，既避免误删未掌握题目，又减少人工逐条清理成本。</p>
+            </div>
+            <div class="tradeoff" style="margin-top:12px">
+              <h4>计算结果先做工程口径说明，不做绝对承诺</h4>
+              <p>每个计算器输出页配套参数释义、参考标准与修正说明（如高温/远距离线径升级、按铭牌为准），把理论估算与现场校核的边界写清楚，避免用户把估算值当成施工结论。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 项目 2 -->
+    <article class="project">
+      <div class="project-head">
+        <div class="project-no">PROJECT 02</div>
+        <h2>快查计算 · 暖通制冷选型计算器矩阵 + 运营后台</h2>
+        <div class="project-tags">
+          <span class="ptag">计算器工具集</span><span class="ptag">选型规则</span><span class="ptag">管理后台</span>
+          <span class="ptag">公式配置</span><span class="ptag">用户反馈</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="pb-row">
+          <div class="pb-label">项目背景</div>
+          <div class="pb-content">
+            <p>面向暖通空调、制冷维修与工程设计人员的选型计算工具，覆盖冷/热负荷、多联机配比、空开与线径、水泵扬程、膨胀阀选型、冷库负荷、制冷剂充注量等高频现场计算。配套后台支持公式上下架、免费/隐藏控制、用户与反馈管理。</p>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">我的角色</div>
+          <div class="pb-content">
+            <div class="role-grid">
+              <div class="role-item"><h4>规则整理</h4><p>把 Excel 工程测算表的输入项、公式、修正系数与参考标准转成产品可实现的计算规则。</p></div>
+              <div class="role-item"><h4>原型设计</h4><p>设计「参数输入 → 计算说明 → 计算结果」三段式页面结构与清空、反馈、记录、分享功能。</p></div>
+              <div class="role-item"><h4>后台设计</h4><p>规划公式列表、免费/隐藏开关、公式提供者、用户列表与反馈、计算次数统计等后台模块。</p></div>
+              <div class="role-item"><h4>口径校验</h4><p>核对单位、取值区间、选大不选小原则与超规范时的人工咨询提示。</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">核心产出</div>
+          <div class="pb-content">
+            <ul>
+              <li><b>负荷类：</b>空调冷量计算（建筑/人员/设备/太阳辐射分项）、制热负荷（房屋类型、朝向、保温、区域、室外温度修正）、湿负荷、冷库冷负荷。</li>
+              <li><b>选型类：</b>多联机容量配比（同时使用率、气候区域、使用时长修正）、空开选型（单相/三相、启动倍数裕量）、匹数线径、水泵扬程流量、膨胀阀选型、风管管径、冷凝水管径。</li>
+              <li><b>冷媒与查询：</b>制冷剂充注量追加、制冷剂物性对照表、压力温度与过冷过热度对照、电容规格对照表。</li>
+              <li><b>后台能力：</b>公式增删改、是否免费、是否隐藏、归属应用与提供者维护；用户列表、用户反馈、计算次数记录。</li>
+            </ul>
+            <div class="proto">
+              <div class="proto-main">
+                <img src="assets/hvac-refill.png" alt="制冷剂充注量计算器原型">
+              </div>
+              <div class="proto-grid">
+                <div class="proto-cell"><img src="assets/hvac-thermo.png" alt="热电偶与 PT100 温度换算原型"></div>
+              </div>
+              <div class="proto-cap">图注：快查计算制冷剂充注量、温度换算计算器原型</div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">关键取舍</div>
+          <div class="pb-content">
+            <div class="tradeoff">
+              <h4>估算透明化：把修正系数摆到明面上</h4>
+              <p>结果页同时展示分项负荷与推荐结论，并附参考指标表（住宅/办公/商铺等取值区间）与修正原则；超出标准规格范围时提示「请咨询厂家」，而不是给出一个无依据的档位。</p>
+            </div>
+            <div class="tradeoff" style="margin-top:12px">
+              <h4>公式可配置，避免硬编码堆积</h4>
+              <p>计算器以「公式 + 输入项 + 释义 + 参考表」为配置单元由后台管理，后续新增品类计算器时无需改动页面框架，运营即可上下架与调整免费策略。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 项目 3 -->
+    <article class="project">
+      <div class="project-head">
+        <div class="project-no">PROJECT 03</div>
+        <h2>接线教育版 · 班级教学与接线练习闭环（B 端教师 / C 端学员）</h2>
+        <div class="project-tags">
+          <span class="ptag">教育类 App</span><span class="ptag">角色权限</span><span class="ptag">任务批改</span>
+          <span class="ptag">资质审核后台</span><span class="ptag">资料管理</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="pb-row">
+          <div class="pb-label">项目背景</div>
+          <div class="pb-content">
+            <p>在电工仿真接线工具基础上延伸的教学场景产品：教师创建/管理班级、发布接线练习任务、批改学员作品；学员通过班级码或邀请链接加入，完成仿真接线并提交，查看评分与评语。配套后台完成教师资质审核与用户管理。</p>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">我的角色</div>
+          <div class="pb-content">
+            <div class="role-grid">
+              <div class="role-item"><h4>角色流程设计</h4><p>梳理学员、教师、管理员三类角色的入口、权限与状态流转（申请中/通过/拒绝）。</p></div>
+              <div class="role-item"><h4>任务闭环</h4><p>设计任务发布、练习模式选择、提交、批改、评语评分与截止状态全流程。</p></div>
+              <div class="role-item"><h4>后台审核</h4><p>设计教师资质申请材料、审核通过/拒绝原因、班级与成员管理后台。</p></div>
+              <div class="role-item"><h4>异常与边界</h4><p>覆盖班级满员、审核拒绝、任务截止、草稿保存、解散/退出不可撤销等提示。</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">核心产出</div>
+          <div class="pb-content">
+            <ul>
+              <li><b>班级体系：</b>6 位班级码加入 / 邀请链接加入；教师新建班级、生成班级码、邀请学生；成员管理、移除成员、设置/转移管理员。</li>
+              <li><b>教师资质审核：</b>姓名、机构、联系方式、预估学生数、资质证明上传（JPG/PNG/PDF，≤10MB）；后台审核通过/拒绝并填写原因，7 个工作日审核口径提示。</li>
+              <li><b>任务与练习：</b>教师选择作品发布任务，提供三种练习模式——保留完整电路供分析验证、仅元器件由学员自主设计、空白练习；任务含标题、说明、截止时间、关联资料与附件。</li>
+              <li><b>批改闭环：</b>学员提交接线作品与用时，教师按优/及格/不及格评分、写评语，待批改优先处理；学员查看批改结果与错题反馈。</li>
+              <li><b>资料学习：</b>班级内文档上传（PDF/DOC/DOCX/TXT，≤50MB）、草稿保存、资料关联任务；参与学生数与完成情况统计。</li>
+            </ul>
+            <div class="proto">
+              <div class="proto-main">
+                <img src="assets/edu-class-detail.png" alt="班级详情与班级管理原型">
+              </div>
+              <div class="proto-grid tall">
+                <div class="proto-cell"><img src="assets/edu-task-grade.png" alt="任务发布与作业批改原型"></div>
+                <div class="proto-cell"><img src="assets/edu-student-task.png" alt="学员任务详情与提交原型"></div>
+                <div class="proto-cell"><img src="assets/edu-stats.png" alt="资料附件与完成情况统计原型"></div>
+                <div class="proto-cell"><img src="assets/edu-admin-review.png" alt="讲师资质审批后台与班级数据原型"></div>
+              </div>
+              <div class="proto-cap">图注：接线教育版班级教学、任务批改、数据统计与讲师资质审批后台原型</div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">关键取舍</div>
+          <div class="pb-content">
+            <div class="tradeoff">
+              <h4>先保护教学秩序，再放开创建权限</h4>
+              <p>创建班级前置教师资质审核；未通过者只能以学员身份加入，避免班级与任务被随意创建。管理员转移为不可逆操作，二次确认并明确「转移后原管理员变为成员」。</p>
+            </div>
+            <div class="tradeoff" style="margin-top:12px">
+              <h4>同一画布，三种难度分层</h4>
+              <p>复用接线画布能力，通过发布模式区分练习难度：有基础的学员从完整电路分析入手，进阶学员自主设计，新手从空白起步；降低教师设计任务的成本。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 项目 4 -->
+    <article class="project">
+      <div class="project-head">
+        <div class="project-no">PROJECT 04</div>
+        <h2>现场作业工具组 · 接线助手 / 弱电图册 / 量尺标记 / 收据通</h2>
+        <div class="project-tags">
+          <span class="ptag">C 端工具矩阵</span><span class="ptag">现场记录</span><span class="ptag">拍照标记画布</span>
+          <span class="ptag">行业模板</span><span class="ptag">会员权益</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="pb-row">
+          <div class="pb-label">项目背景</div>
+          <div class="pb-content">
+            <p>围绕不同现场场景的一组独立小工具：仿真接线练习、弱电施工资料图册、装修/量尺现场拍照标记、行业收据单据生成。每个工具对应一类高频工作记录或查询需求，并在个人中心承接会员、订单、反馈与客服等通用能力。</p>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">模块与产出</div>
+          <div class="pb-content">
+            <ul>
+              <li><b>接线助手：</b>家庭照明、工业控制、低压考证分类练习；一灯一控、双控开关、三相电机启停保、正反转、变频器控制等典型电路试炼；作品展示与关键词搜索。</li>
+              <li><b>弱电接线 / 图册：</b>综合布线、计算机网络、智能消防、程控交换、无线对讲、有线电视、监控视频、门禁一卡通、电子巡更、楼控、智能照明等分类；资料收藏、分类排序与无内容分类自动隐藏规则。</li>
+              <li><b>量尺大师 / 拍图标记：</b>项目化管理（待签约/待施工/施工中/待验收/已完成），现场拍照或相册选图标记；刻线、箭头、角度、矩形、椭圆、文字/语音标注、标签分类、放大镜与辅助线；文件夹归档、时段筛选、保存相册 / 导出 PDF / ZIP。</li>
+              <li><b>收据通：</b>旅行社、餐饮、汽修、门窗订货等行业模板；粘贴信息自动拆分客户名称与电话；明细自动核算应收/实收/欠款；电子印章、经手人签名、客户签字、账单分享与客户确认领取。</li>
+              <li><b>扳手快查后台：</b>故障码查询与数码管字符对照；兑换码批次管理、关联应用、短信发码、激活状态判断与发码留痕。</li>
+            </ul>
+            <div class="proto">
+              <div class="proto-main">
+                <img src="assets/ruler-home.png" alt="拍图标记首页原型">
+              </div>
+              <div class="proto-grid tall">
+                <div class="proto-cell"><img src="assets/ruler-protractor.png" alt="量角尺测量工具原型"></div>
+                <div class="proto-cell"><img src="assets/ruler-records.png" alt="测量记录与文件夹归档原型"></div>
+                <div class="proto-cell"><img src="assets/ruler-canvas-note.png" alt="标记画布文字与语音标注原型"></div>
+                <div class="proto-cell"><img src="assets/ruler-canvas-line.png" alt="线条样式与宽度选择原型"></div>
+                <div class="proto-cell"><img src="assets/ruler-project-list.png" alt="项目管理列表原型"></div>
+                <div class="proto-cell"><img src="assets/ruler-project-detail.png" alt="项目明细与管理入口原型"></div>
+                <div class="proto-cell"><img src="assets/ruler-project-share.png" alt="项目分享页原型"></div>
+                <div class="proto-cell"><img src="assets/weak-home.png" alt="弱电宝典首页与分类原型"></div>
+                <div class="proto-cell"><img src="assets/wiring-home.png" alt="接线助手首页与热门作品原型"></div>
+                <div class="proto-cell"><img src="assets/wiring-plaza.png" alt="作品广场推荐与搜索原型"></div>
+                <div class="proto-cell"><img src="assets/receipt-edit.png" alt="寄存物品保管单编辑原型"></div>
+                <div class="proto-cell"><img src="assets/receipt-detail.png" alt="账单详情与履约履历原型"></div>
+                <div class="proto-cell"><img src="assets/receipt-paper.png" alt="纸质保管单样式与扫码领取原型"></div>
+                <div class="proto-cell"><img src="assets/receipt-sign.png" alt="本人签收核对原型"></div>
+                <div class="proto-cell"><img src="assets/wrench-users.png" alt="扳手快查后台用户列表原型"></div>
+                <div class="proto-cell"><img src="assets/wrench-feedback.png" alt="扳手快查后台用户反馈原型"></div>
+              </div>
+              <div class="proto-cap">图注：量尺 / 拍图标记工具、测量与记录归档、标记画布、项目管理、弱电宝典、接线助手、收据通单据与扳手快查后台原型</div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">关键取舍</div>
+          <div class="pb-content">
+            <div class="tradeoff">
+              <h4>按场景拆工具，按通用能力做底座</h4>
+              <p>各工具保持独立入口与轻量体验，避免一个大而全 App 抬高使用门槛；账号、会员权益、订单、反馈、客服、更新日志等通用能力统一在「我的」页面复用。</p>
+            </div>
+            <div class="tradeoff" style="margin-top:12px">
+              <h4>现场优先：减少输入，保留可追溯记录</h4>
+              <p>标记画布提供上次模式记忆、辅助线与放大镜，适配现场单手操作；项目、标记、导出与分享形成可带走、可对账的记录链。</p>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">结果与数据</div>
+          <div class="pb-content">
+            <div class="app-data">
+              <div class="app-card">
+                <h4>接线助手</h4>
+                <div class="app-row"><span class="k">注册用户</span><span class="v">58,920 人</span></div>
+                <div class="app-row"><span class="k">订单量</span><span class="v">1,618 单</span></div>
+                <div class="app-row"><span class="k">订单金额</span><span class="v">52,163.1 元</span></div>
+                <div class="app-row"><span class="k">平均客单</span><span class="v">32.24 元</span></div>
+              </div>
+              <div class="app-card">
+                <h4>拍图标记</h4>
+                <div class="app-row"><span class="k">注册用户</span><span class="v">900 人</span></div>
+              </div>
+              <div class="app-card">
+                <h4>量尺大师</h4>
+                <div class="app-row"><span class="k">注册用户</span><span class="v">13,684 人</span></div>
+                <div class="app-row"><span class="k">订单量</span><span class="v">314 单</span></div>
+                <div class="app-row"><span class="k">订单金额</span><span class="v">11,899 元</span></div>
+                <div class="app-row"><span class="k">平均客单</span><span class="v">37.89 元</span></div>
+              </div>
+            </div>
+            <p class="data-note">统计区间：2025-06-23 至 2026-11-26，数据来自各应用后台订单与用户统计；退货订单、退货金额等明细未列入。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 项目 5 -->
+    <article class="project">
+      <div class="project-head">
+        <div class="project-no">PROJECT 05</div>
+        <h2>电工垂直内容矩阵 · 短视频 / 图文选题运营与增长复盘</h2>
+        <div class="project-tags">
+          <span class="ptag">内容运营</span><span class="ptag">选题矩阵</span><span class="ptag">脚本策划</span>
+          <span class="ptag">数据复盘</span><span class="ptag">产品需求反哺</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="pb-row">
+          <div class="pb-label">项目背景</div>
+          <div class="pb-content">
+            <p>围绕电工、暖通、弱电垂直人群运营短视频与图文内容矩阵，承担工具 App 的拉新入口与用户教育职能。内容覆盖仪表使用、接线电路、安全用电、弱电方案等主题，通过持续发布与数据复盘迭代选题、标题与形式，并从评论与高收藏内容中提炼产品需求。</p>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">核心数据</div>
+          <div class="pb-content">
+            <div class="matrix">
+              <div class="metric"><div class="num">620</div><div class="cap">累计发布作品（条）</div></div>
+              <div class="metric"><div class="num">559.8 万</div><div class="cap">累计播放量</div></div>
+              <div class="metric"><div class="num">6.52 万</div><div class="cap">累计收藏量</div></div>
+              <div class="metric"><div class="num">1.8 万</div><div class="cap">累计粉丝增量</div></div>
+            </div>
+            <p style="margin-top:14px;color:var(--muted);font-size:14px">统计区间：2025-07 至 2026-11；另有累计点赞 6.11 万、分享 7,398、评论 928、主页访问 3.22 万；篇均播放约 9,029、篇均收藏约 105。</p>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">我的角色</div>
+          <div class="pb-content">
+            <div class="role-grid">
+              <div class="role-item"><h4>选题规划</h4><p>按仪表仿真、接线电路、安全用电、弱电方案等主题搭建内容矩阵，匹配新手入门到考证进阶的学习路径。</p></div>
+              <div class="role-item"><h4>脚本与形式</h4><p>撰写口播与图文脚本，沉淀「口诀 + 实操 + 避坑」结构；区分 1 分钟短内容、1–3 分钟教程、3–5 分钟课程与图文卡片。</p></div>
+              <div class="role-item"><h4>数据复盘</h4><p>跟踪播放、5s 完播、收藏、分享、主页访问与涨粉，识别高收藏的工具型内容与高播放的话题型内容。</p></div>
+              <div class="role-item"><h4>需求反哺</h4><p>从高频提问、评论痛点与高收藏选题中，反向整理计算器、题库、图册与练习功能的迭代线索。</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">内容结构</div>
+          <div class="pb-content">
+            <ul>
+              <li><b>仪表仿真类（约 191 条）：</b>指针/数字万用表、钳形表、摇表、测电笔的档位认识、表笔接法、电压/电流/电阻/通断/电容二极管测量与漏电排查。</li>
+              <li><b>接线电路类（约 298 条）：</b>家庭照明、双控开关、配电箱、接触器自锁、电机启停保与正反转、星三角、变频器控制、电路图识读。</li>
+              <li><b>安全与维修类（约 103 条）：</b>漏保与漏电检测、零火接反、插座碳化、电容放电、家电故障排查与用电避坑。</li>
+              <li><b>弱电方案类：</b>监控安装、全屋 WiFi、门禁、综合布线等弱电宝典图文与教程。</li>
+            </ul>
+            <div class="proto">
+              <div class="proto-main">
+                <img src="assets/content-home.png" alt="电工内容矩阵账号主页原型">
+              </div>
+              <div class="proto-cap">图注：电工内容矩阵账号主页与合集分类原型</div>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">关键取舍</div>
+          <div class="pb-content">
+            <div class="tradeoff">
+              <h4>工具型内容吃收藏，话题型内容吃播放，分开定目标</h4>
+              <p>教程、对照表、接线方法类内容以收藏与主页访问为核心指标，承担留存与转化；故障场景、避坑科普类内容以播放与评论为核心指标，承担拉新。复盘时不混用同一套标准判断选题好坏。</p>
+            </div>
+            <div class="tradeoff" style="margin-top:12px">
+              <h4>内容即需求调研：把评论区痛点沉淀成产品清单</h4>
+              <p>高频提问与反复出现的错误操作，直接对应题库错题、计算器入口与仿真练习场景；内容选题与产品迭代共用同一份用户痛点清单，避免运营与产品各做各的。</p>
+            </div>
+          </div>
+        </div>
+        <div class="pb-row">
+          <div class="pb-label">代表内容</div>
+          <div class="pb-content">
+            <ul>
+              <li>万用表排查故障教程：播放约 111.5 万、收藏约 1.57 万。</li>
+              <li>弱电常用密码整理：播放约 81.5 万、收藏约 1.14 万。</li>
+              <li>电工常用 8 种接线方法：播放约 18.8 万、收藏约 1,143。</li>
+              <li>万用表常用符号图文：播放约 13.5 万、收藏约 2,031。</li>
+            </ul>
+            <p style="color:var(--dim);font-size:13px;margin-top:8px">注：以上数据来自作品列表导出，统计口径以平台后台为准；单条作品数据随时间变化，投递前建议复核。</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 工作方法 ============ -->
+<section id="method">
+  <div class="wrap">
+    <div class="sec-title">工作方法</div>
+    <p class="sec-desc">在工具类产品上反复使用的一套推进方式。</p>
+    <div class="method">
+      <div class="mstep">
+        <div class="n">01 · 摸清现场</div>
+        <h3>还原工作流</h3>
+        <p>先看一线用户在什么场景、用什么工具、卡在哪一步，再确定产品要替代或辅助哪个环节。</p>
+      </div>
+      <div class="mstep">
+        <div class="n">02 · 规则先行</div>
+        <h3>沉淀可计算口径</h3>
+        <p>把经验公式、选型表、单位换算整理成输入项、公式、参考标准与异常边界，再进入原型。</p>
+      </div>
+      <div class="mstep">
+        <div class="n">03 · 原型闭环</div>
+        <h3>覆盖主流程与异常态</h3>
+        <p>原型不仅画成功路径，也写清空状态、校验失败、权限不足、截止/失效与不可撤销操作的提示。</p>
+      </div>
+      <div class="mstep">
+        <div class="n">04 · 迭代验证</div>
+        <h3>按反馈排优先级</h3>
+        <p>收集反馈、错题、查询、评论与使用记录，区分高频痛点与锦上添花，按版本推进优化。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 关于我 ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-title">关于我</div>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>李佳 · 工具类产品方向</h3>
+        <p>1.5 年产品相关经验，现居深圳，大专学历。过往任职产研部门产品助理，长期贴近电工、暖通、弱电一线的维修、施工与教学场景，习惯先还原用户真实工作流，再把行业经验、工程公式与现场需求整理成可落地的产品规则和原型方案。</p>
+        <p>参与过多款移动端工具 App 及配套后台的产品工作，覆盖计算器与选型工具、题库学习闭环、教学班级与批改流程、现场记录与单据生成，以及用户、反馈、兑换等后台模块；同时负责垂直领域短视频/图文内容矩阵的选题、脚本与数据复盘，并从评论和高收藏内容中反哺产品需求。</p>
+        <p>工作方式上重视口径与边界：计算结论先写清适用条件与参考标准，不做无依据的承诺；原型同时覆盖主流程、异常态与不可撤销操作；通过反馈与使用记录持续排定迭代优先级。</p>
+        <div class="about-tags">
+          <span class="chip">需求调研与流程梳理</span>
+          <span class="chip">Axure 原型 / PRD</span>
+          <span class="chip">计算器与选型规则</span>
+          <span class="chip">后台与配置设计</span>
+          <span class="chip">内容选题与数据复盘</span>
+          <span class="chip">跨角色协作落地</span>
+        </div>
+      </div>
+      <div class="about-side">
+        <h4>求职意向</h4>
+        <ul>
+          <li>目标岗位：产品经理 / 产品助理</li>
+          <li>期望方向：工具类、行业垂直 App、后台系统、内容运营结合产品</li>
+          <li>熟悉领域：电工、暖通空调、弱电智能化</li>
+          <li>所在城市：深圳（可按机会沟通）</li>
+        </ul>
+        <h4 style="margin-top:20px">联系方式</h4>
+        <ul>
+          <li>电话：13427910767</li>
+          <li>微信：tutuu1107</li>
+          <li>邮箱：3263188618@qq.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="about-note">
+      <b>使用说明：</b>本作品集基于交接原型文件、工程计算表、迭代需求记录与短视频作品列表整理，项目公司与产品名称可按投递需要进一步脱敏；案例中的业务数据来自各应用后台统计，口径以平台后台为准，单条指标随时间变化，投递前建议复核；涉及行业规范与选型结论的内容，以现行标准与现场工程师校核为准。
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 李佳 · 产品经理作品集 · 页面内容为个人求职展示用途</div>
+</footer>
+
+</body>
+</html>
